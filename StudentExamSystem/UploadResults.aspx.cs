@@ -45,7 +45,7 @@ namespace StudentExamSystem
                     context.SaveChanges();
 
                     // Link report to student
-                    var student = context.Info.Find(studentId);
+                    var student = context.Student.Find(studentId);
                     if (student != null)
                     {
                         student.ReportId = report.ReportId;

@@ -12,6 +12,11 @@ select,
 textarea {
     max-width: 280px;
 }
+.loginform{
+    height:600px;
+    width: 450px;
+    background-color:red;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

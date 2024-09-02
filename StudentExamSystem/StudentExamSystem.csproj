@@ -225,6 +225,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Login.aspx" />
     <Content Include="Manage Students.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Dashboard.aspx" />
@@ -282,6 +283,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage Students.aspx.cs">
       <DependentUpon>Manage Students.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -299,8 +307,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Model\Datalayer\Info.cs" />
+    <Compile Include="Migrations\20240830110458_Intial.cs" />
+    <Compile Include="Migrations\20240830110458_Intial.Designer.cs">
+      <DependentUpon>20240830110458_Intial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20240830130112_addedemailandpassword-tolecturer.cs" />
+    <Compile Include="Migrations\20240830130112_addedemailandpassword-tolecturer.Designer.cs">
+      <DependentUpon>20240830130112_addedemailandpassword-tolecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\studentsContextModelSnapshot.cs" />
+    <Compile Include="Model\Datalayer\Class.cs" />
+    <Compile Include="Model\Datalayer\ClassCourses.cs" />
+    <Compile Include="Model\Datalayer\Courses.cs" />
+    <Compile Include="Model\Datalayer\Department.cs" />
+    <Compile Include="Model\Datalayer\Students.cs" />
+    <Compile Include="Model\Datalayer\Lecturer.cs" />
+    <Compile Include="Model\Datalayer\LecturerCourse.cs" />
     <Compile Include="Model\Datalayer\Report.cs" />
+    <Compile Include="Model\Datalayer\StudentCourse.cs" />
     <Compile Include="Model\Datalayer\studentsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

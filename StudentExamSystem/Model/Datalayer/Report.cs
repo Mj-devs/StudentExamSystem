@@ -15,6 +15,6 @@ namespace StudentExamSystem.Model.Datalayer
         public string Comments { get; set; }
         public DateTime? Date { get; set; }
 
-        public virtual Info Student { get; set; }
+        public virtual Students Student { get; set; }
     }
 }

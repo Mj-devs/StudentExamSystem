@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 namespace StudentExamSystem.Model.Datalayer
 {
-    public partial class Info
+    public partial class Students
     {
-        public Info()
+        public Students()
         {
             Report = new HashSet<Report>();
         }
@@ -19,7 +19,12 @@ namespace StudentExamSystem.Model.Datalayer
         public string Lastname { get; set; }
         public string MatricNo { get; set; }
         public int? ReportId { get; set; }
+        public int DepartmentId { get; set; }
+        public int ClassId { get; set; }
+
 
         public virtual ICollection<Report> Report { get; set; }
+        public List<Courses> Courses { get; set; }       
+
     }
 }

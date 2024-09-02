@@ -19,23 +19,30 @@ namespace StudentExamSystem.Model.Datalayer
         {
         }
 
-        public virtual DbSet<Info> Info { get; set; }
+        public virtual DbSet<Students> Student { get; set; }
         public virtual DbSet<Report> Report { get; set; }
+        public virtual DbSet<Class> Class{ get; set; }
+        public virtual DbSet<Courses> Courses{ get; set; }
+        public virtual DbSet<Department> Department{ get; set; }
+        public virtual DbSet<Lecturer> Lecturer{ get; set; }
+        public virtual DbSet<ClassCourses> ClassCourses{ get; set; }
+        public virtual DbSet<LecturerCourse> LecturerCourses { get; set; }
+        public virtual DbSet<StudentCourse> StudentCourses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=Devs; Database=students; Trusted_Connection=True; TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer("Server=Devs; Database=GradeManagement; Trusted_Connection=True; TrustServerCertificate=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Info>(entity =>
+            modelBuilder.Entity<Students>(entity =>
             {
-                entity.ToTable("info");
+                entity.ToTable("Students");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
@@ -73,6 +80,7 @@ namespace StudentExamSystem.Model.Datalayer
                     .HasConstraintName("FK_Report_Student");
             });
 
+           
             OnModelCreatingPartial(modelBuilder);
         }
 

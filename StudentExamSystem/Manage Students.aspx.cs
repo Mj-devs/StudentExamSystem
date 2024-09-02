@@ -23,7 +23,7 @@ namespace StudentExamSystem
         {
             //Method to retrive data from database
             var _context = new studentsContext();
-            var populate = _context.Info.ToList();
+            var populate = _context.Student.ToList();
             gvstudents.DataSource = populate;
             gvstudents.DataBind();
         }
@@ -43,7 +43,7 @@ namespace StudentExamSystem
             //Filter database using Firstname, Lastname or matric no
             using (var _context = new studentsContext())
             {
-                var filter = _context.Info.AsQueryable();
+                var filter = _context.Student.AsQueryable();
 
                 if (!string.IsNullOrEmpty(searchTerm))
                 {
@@ -68,7 +68,7 @@ namespace StudentExamSystem
             using (var context = new studentsContext())
             {
                 // Check if the matriculation number already exists
-                bool matricNoExists = context.Info.Any(i => i.MatricNo == matricNo);
+                bool matricNoExists = context.Student.Any(i => i.MatricNo == matricNo);
 
                 // If the matriculation number exists, validation fails
                 if (matricNoExists)
@@ -78,7 +78,7 @@ namespace StudentExamSystem
                 else
                 {
                     args.IsValid = true; // Set validation to pass
-                    context.Info.Add(new Info { Firstname = txtfirstname.Text, Lastname = txtlastname.Text, MatricNo = txtmatricno.Text });
+                    context.Student.Add(new Students { Firstname = txtfirstname.Text, Lastname = txtlastname.Text, MatricNo = txtmatricno.Text });
                     context.SaveChanges();
                
                 // Refresh the grid view or clear the form

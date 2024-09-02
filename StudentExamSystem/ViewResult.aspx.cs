@@ -22,7 +22,7 @@ namespace StudentExamSystem
                     using (var context = new studentsContext())
                     {
                         // Retrieve the student and their report data based on the student ID
-                        var data = from i in context.Info where i.Id.ToString() == studentId 
+                        var data = from i in context.Student where i.Id.ToString() == studentId 
                                    join r in context.Report on i.ReportId
                                    equals r.ReportId select new { student= i, report= r};
                         var returned = data.FirstOrDefault();

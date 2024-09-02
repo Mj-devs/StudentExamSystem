@@ -18,7 +18,7 @@ namespace StudentExamSystem
         {
             //Method to retrive data from database
             var _context = new studentsContext();
-            var populate = _context.Info.ToList();
+            var populate = _context.Student.ToList();
             gvstudents.DataSource = populate;
             gvstudents.DataBind();
         }
